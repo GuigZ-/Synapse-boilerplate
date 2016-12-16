@@ -1,0 +1,21 @@
+<h2 class="highlightTitle">
+    {{ promotion.headtitle }}
+</h2>
+<a href="{{ promotion.link }}">
+    <img src="{{ asset(image.formatWebPath('')) }}" alt="" />
+</a>
+<div class="freePush wrapInformation">
+    <div class="information">
+        <h3>{{ promotion.title }}</h3>
+        {{ promotion.description }}
+    </div>
+    <div class="ctaWrapper">
+        <a href="{{ promotion.link }}" class="btnAction">
+            <span>Découvrir</span>
+        </a>
+    </div>
+</div>
+<div class="col-xs-12">
+    <a href="{{ promotion.link }}">
+    </a>
+</div>

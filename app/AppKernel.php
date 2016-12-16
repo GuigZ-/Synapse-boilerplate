@@ -22,6 +22,8 @@ class AppKernel extends Kernel
             new Synapse\Admin\Bundle\SynapseAdminBundle(),
             new Synapse\Demo\Bundle\ThemeBundle\SynapseDemoThemeBundle(),
             new Synapse\Demo\Bundle\AppBundle\SynapseDemoAppBundle(),
+            new Synapse\AccorHotel\Bundle\PageBundle\SynapseAccorHotelPageBundle(),
+            new Synapse\AccorHotel\Bundle\ThemeBundle\SynapseAccorHotelThemeBundle(),
             new AppBundle\AppBundle(),
         ];
 

@@ -1,0 +1,7 @@
+# Synapse Content Type
+synapse_cmf:
+    components:
+        promotion:
+            form: 'Synapse\AccorHotel\Bundle\PageBundle\Form\Type\PromotionType'
+            controller: accorhotel.promotion.controller:render
+            template_path: "SynapseAccorHotelThemeBundle::Component/promotion.html.twig"

@@ -1,0 +1,53 @@
+synapse:
+    bootstrap:
+        structure:
+            promotions:
+                header:
+                    menu: ~
+                    free: ~
+                footer:
+                    free: ~
+                    menu: ~
+                footer_top:
+                    menu: ~
+                footer_content:
+                    menu: ~
+                footer_bottom:
+                    menu: ~
+                highlight_header:
+                    promotion: ~
+                highlight:
+                    free: ~
+                    promotion: ~
+                promotions_title:
+                    free: ~
+                promotions:
+                    promotion: ~
+
+        templates:
+            promotions:
+                path: SynapseAccorHotelThemeBundle:Template:promotions.html.twig
+
+        zones:
+            header:
+                virtual: true
+            highlight_header: ~
+            highlight:
+                aggregation:
+                    path: SynapseAccorHotelThemeBundle:Template:_promotions_aggregation.html.twig
+            promotions_title: ~
+            promotions:
+                aggregation:
+                    path: SynapseAccorHotelThemeBundle:Template:_promotions_aggregation.html.twig
+            footer:
+                virtual: true
+
+        components:
+            menu:
+                path: SynapseAccorHotelThemeBundle:Component:menu.html.twig
+            promotion:
+                variations:
+                    jumbotron:
+                        _if: "zone == 'highlight_header'"
+                        _then:
+                            path: SynapseAccorHotelThemeBundle::Component/promotion_highlight_header.html.twig
