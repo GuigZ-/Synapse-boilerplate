@@ -3,5 +3,5 @@ synapse_cmf:
     components:
         promotion:
             form: 'Synapse\AccorHotel\Bundle\PageBundle\Form\Type\PromotionType'
-            controller: accorhotel.promotion.controller:render
+            controller: accorhotel.promotion.controller:renderAction
             template_path: "SynapseAccorHotelThemeBundle::Component/promotion.html.twig"

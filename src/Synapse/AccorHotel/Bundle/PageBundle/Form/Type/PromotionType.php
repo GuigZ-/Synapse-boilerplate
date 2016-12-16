@@ -12,14 +12,18 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Synapse\Cmf\Bundle\Form\Type\Media\ImageChoiceType;
 
-class PromotionsType extends AbstractType
+class PromotionType extends AbstractType
 {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title', TextType::class, []);
-        $builder->add('description', TextareaType::class, []);
-        $builder->add('link', TextType::class, []);
+        $builder->add('headtitle', TextType::class, ['required' => false])
+            ->add('title', TextareaType::class, [])
+            ->add('description', TextareaType::class, [])
+            ->add('link', TextType::class, [])
+            ->add('image', ImageChoiceType::class, [])
+        ;
     }
 }

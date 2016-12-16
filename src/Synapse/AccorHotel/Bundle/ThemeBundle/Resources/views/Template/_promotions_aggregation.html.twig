@@ -1,0 +1,5 @@
+{% for component in components %}
+    <div class="wise highlight v6by5 childfreePush {{ loop.index % 3 != 0 ? '': ' last' }}">
+        {{ component|raw }}
+    </div>
+{% endfor %}

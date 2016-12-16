@@ -5,15 +5,6 @@ synapse:
                 header:
                     menu: ~
                     free: ~
-                footer:
-                    free: ~
-                    menu: ~
-                footer_top:
-                    menu: ~
-                footer_content:
-                    menu: ~
-                footer_bottom:
-                    menu: ~
                 highlight_header:
                     promotion: ~
                 highlight:
@@ -23,6 +14,15 @@ synapse:
                     free: ~
                 promotions:
                     promotion: ~
+                footer:
+                    free: ~
+                    menu: ~
+                footer_top:
+                    menu: ~
+                footer_content:
+                    menu: ~
+                footer_bottom:
+                    menu: ~
 
         templates:
             promotions:
@@ -41,13 +41,28 @@ synapse:
                     path: SynapseAccorHotelThemeBundle:Template:_promotions_aggregation.html.twig
             footer:
                 virtual: true
+            footer_top:
+                virtual: true
+            footer_content:
+                virtual: true
+            footer_bottom:
+                virtual: true
 
         components:
             menu:
                 path: SynapseAccorHotelThemeBundle:Component:menu.html.twig
+                variations:
+                    menu_footer_top:
+                        _if: "zone == 'footer_top'"
+                        _then:
+                            path: SynapseAccorHotelThemeBundle::Component/menu_footer_top.html.twig
+                    menu_footer_bottom:
+                        _if: "zone == 'footer_bottom'"
+                        _then:
+                            path: SynapseAccorHotelThemeBundle::Component/menu_footer_bottom.html.twig
             promotion:
                 variations:
-                    jumbotron:
+                    promotion:
                         _if: "zone == 'highlight_header'"
                         _then:
                             path: SynapseAccorHotelThemeBundle::Component/promotion_highlight_header.html.twig

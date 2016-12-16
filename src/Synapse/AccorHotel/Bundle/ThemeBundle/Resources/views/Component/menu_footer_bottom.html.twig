@@ -1,0 +1,5 @@
+    <div class="row sublink-container">
+        {% for label, link in menu %}
+            <span class="sublink"><a href="{{ link.url }}" class="link-section-title">{{ label }}</a></span>
+        {% endfor %}
+    </div>

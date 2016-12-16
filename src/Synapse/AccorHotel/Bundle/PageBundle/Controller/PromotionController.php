@@ -13,13 +13,31 @@ use Symfony\Component\HttpFoundation\Request;
 use Synapse\Cmf\Framework\Engine\Engine;
 use Synapse\Cmf\Framework\Theme\Component\Model\ComponentInterface;
 use Synapse\Cmf\Framework\Theme\Content\Model\ContentInterface;
+use Synapse\Cmf\Framework\Media\Image\Loader\LoaderInterface as ImageLoader;
+use Synapse\Cmf\Framework\Engine\Engine as Synapse;
 
 class PromotionController extends Controller
 {
+    /**
+     * @var \Synapse\Cmf\Framework\Media\File\Loader\LoaderInterface
+     */
+    private $imageLoader;
+
+    /**
+     * @var \Synapse\AccorHotel\Bundle\PageBundle\Controller\Synapse
+     */
+    private $synapse;
+
+    public function __construct(ImageLoader $imageLoader, Synapse $synapse)
+    {
+        $this->imageLoader = $imageLoader;
+        $this->synapse = $synapse;
+    }
+
     public function renderAction(ComponentInterface $component, ContentInterface $content)
     {
         /** @var Engine $synapse */
-        $synapse = $this->get('synapse');
+        $synapse = $this->synapse;
 
         if (!$data = $component->getData()) {
             return new Response('');
@@ -28,7 +46,8 @@ class PromotionController extends Controller
         return $synapse
             ->createDecorator($component)
             ->decorate([
-                'promotion' => $data
+                'promotion' => $data,
+                'image' => $this->imageLoader->retrieve($data['image'])
             ]);
     }
 }

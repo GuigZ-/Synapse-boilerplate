@@ -1,0 +1,5 @@
+    <ul class="row sublink-container">
+        {% for label, link in menu %}
+            <li class="sublink"><a href="{{ link.url }}" class="ico ico-small-{{ label }}"></a></li>
+        {% endfor %}
+    </ul>

@@ -1,0 +1,5 @@
+    <div class="row">
+        {% for label, link in menu %}
+            <span class="link-section"><a href="{{ link.url }}" class="link-section-title">{{ label }}</a></span>
+        {% endfor %}
+    </div>

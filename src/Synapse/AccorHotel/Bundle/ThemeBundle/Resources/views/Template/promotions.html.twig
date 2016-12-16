@@ -1,0 +1,21 @@
+{% extends 'SynapseAccorHotelThemeBundle::layout.html.twig' %}
+
+{% block content %}
+    <div id="promotionsOffers">
+        <div class="wise slider sliderEvent" data-random="false">
+            <div class="innerSlider" >
+                <div class="item" data-id="0" data-xiti="1" >
+                    {{ synapse_zone('highlight_header') }}
+                </div>
+            </div>
+        </div>
+
+        <div id="wrapFocusOffer">
+            {{ synapse_zone('highlight') }}
+        </div>
+        {{ synapse_zone('promotions_title') }}
+        <div id="wrapCommonOffer">
+            {{ synapse_zone('promotions') }}
+        </div>
+    </div>
+{% endblock %}

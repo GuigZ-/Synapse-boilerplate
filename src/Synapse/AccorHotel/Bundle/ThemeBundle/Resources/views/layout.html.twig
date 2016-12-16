@@ -1,75 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     {% block meta %}
-      <meta name="description" content="">
-      <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-      <title>Synapse demo template</title>
+        <title>Synapse demo template</title>
     {% endblock %}
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="http://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://www.accorhotels.com/css-v1605/set/promotions-offers/index.css">
+    <link rel="stylesheet" href="http://www.accorhotels.com/css-v1605/commun/footer_cr.css">
 
-    <!-- Custom styles for this template -->
-    <link href="http://v4-alpha.getbootstrap.com/examples/jumbotron/jumbotron.css" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
+<body id="promoIndex" class="fr">
+    <div class="mainContainer">
+        <!-- Main top for a primary marketing message or call to action -->
+        <header>
+            {% block header %}{{ synapse_zone('header') }}{% endblock %}
+        </header>
+        <div class="contentContainer body-wrapper">
+            {% block content %}{% endblock %}
+        </div>
+        <footer>
+            <div id="footer" class="footer-container">
+                {% block footer %}
+                    <div class="title">
+                        <div class="title-container">
+                            <div class="pull-right social">
+                                {{ synapse_zone('footer_top') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="links container-fluid">
+                        {{ synapse_zone('footer_content') }}
+                    </div>
+                    <div class="links container-fluid second_menu">
+                        {{ synapse_zone('footer_bottom') }}
+                    </div>
+                {% endblock %}
+            </div>
+        </footer>
+    </div>
 
-    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
-      <a class="navbar-brand" href="#">Synapse Demo</a>
-      <ul class="nav navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Main top for a primary marketing message or call to action -->
-    {% block top %}
-      <div class="top">
-        {{ synapse_zone('top') }}
-      </div>
-    {% endblock %}
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    {% block jumbotron %}
-      <div class="jumbotron">
-        {{ synapse_zone('jumbotron') }}
-      </div>
-    {% endblock %}
-
-    <div class="container">
-    {% block content %}
-      <div class="row">
-        {{ synapse_zone('content') }}
-      </div>
-    {% endblock %}
-
-      <hr>
-
-      <footer>
-        <p>&copy; LinkValue 2016</p>
-      </footer>
-    </div> <!-- /container -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="http://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
-  </body>
+</body>
 </html>
